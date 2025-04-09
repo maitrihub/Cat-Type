@@ -5,81 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <!-- Search Field -->
     <EditText
         android:id="@+id/search_field"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Cat Breed"
-        android:textSize="16sp"
-        android:padding="12dp"
         android:background="@drawable/search_field_bg"
+        android:hint="Enter Cat Breed"
         android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="12dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@id/search_button"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintHorizontal_weight="1" />
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <!-- Search Button -->
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_bright"
         android:text="Search"
         android:textAllCaps="false"
-        android:textSize="16sp"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="12dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toTopOf="@id/search_field"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/search_field"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/search_field"
-        app:layout_constraintHorizontal_bias="0" />
+        app:layout_constraintTop_toTopOf="@id/search_field" />
 
-    <!-- Cat Name -->
-    <TextView
-        android:id="@+id/cat_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Cat Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingTop="24dp"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/search_field"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/breedRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Cat Origin -->
-    <TextView
-        android:id="@+id/cat_origin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Cat Origin"
-        android:textSize="16sp"
-        android:textColor="#666"
-        android:paddingTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/cat_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Cat Description -->
-    <TextView
-        android:id="@+id/cat_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Cat Description"
-        android:textSize="16sp"
-        android:textColor="#444"
-        android:paddingTop="8dp"
-        android:lineSpacingExtra="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cat_origin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/search_field" />
 </androidx.constraintlayout.widget.ConstraintLayout>
